@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">RandomWakeupApp</string>
+    <string name="app_name" translatable="false">Random Wakeup</string>
+    <string name="main_no_alarms_notification">Alarm not set up</string>
+    <string name="create_alarm_name_input">Alarm Name</string>
+    <string name="create_create_button">Create</string>
+    <string name="create_time_input_time">Time of alarm</string>
 </resources>
