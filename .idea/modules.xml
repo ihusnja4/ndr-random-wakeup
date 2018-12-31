@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ndr-random-wakeup.iml" filepath="$PROJECT_DIR$/ndr-random-wakeup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/randomwakeupapp/randomwakeupapp.iml" filepath="$PROJECT_DIR$/randomwakeupapp/randomwakeupapp.iml" />
+    </modules>
+  </component>
+</project>
