@@ -4,4 +4,5 @@
     <string name="create_alarm_name_input">Alarm Name</string>
     <string name="create_create_button">Create</string>
     <string name="create_time_input_time">Time of alarm</string>
+    <string name="created_text">%s alarm set for %s with span of %s</string>
 </resources>
