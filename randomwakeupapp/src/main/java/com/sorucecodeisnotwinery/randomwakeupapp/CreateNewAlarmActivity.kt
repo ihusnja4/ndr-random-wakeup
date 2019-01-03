@@ -1,5 +1,6 @@
 package com.sorucecodeisnotwinery.randomwakeupapp
 
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -29,7 +30,9 @@ class CreateNewAlarmActivity : AppCompatActivity(), AdapterView.OnItemSelectedLi
     fun createAlarm(view: View) {
         val alarmName = findViewById<EditText>(R.id.alarmNameInputText).text.toString()
         val timeControl = findViewById<TimePicker>(R.id.timeInputTime)
-        val time = "${padZero(timeControl.hour)}:${padZero(timeControl.minute)}"
+        val hour = if (Build.VERSION.SDK_INT >= 23) timeControl.hour else timeControl.currentHour
+        val minute = if (Build.VERSION.SDK_INT >= 23) timeControl.minute else timeControl.currentMinute
+        val time = "${padZero(hour)}:${padZero(minute)}"
         val result = findViewById<TextView>(R.id.resultLabel).apply {
             text = getString(R.string.created_text, alarmName, time, selectedSpan)
         }
