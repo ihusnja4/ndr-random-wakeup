@@ -24,7 +24,7 @@ class CreateNewAlarmActivity : AppCompatActivity(), AdapterView.OnItemSelectedLi
         // set the spinners adapter to the previously created one.
         span.adapter = adapter
         span.setSelection(0)
-        span.setOnItemSelectedListener(this)
+        span.onItemSelectedListener = this
     }
 
     fun createAlarm(view: View) {
@@ -33,13 +33,14 @@ class CreateNewAlarmActivity : AppCompatActivity(), AdapterView.OnItemSelectedLi
         val hour = if (Build.VERSION.SDK_INT >= 23) timeControl.hour else timeControl.currentHour
         val minute = if (Build.VERSION.SDK_INT >= 23) timeControl.minute else timeControl.currentMinute
         val time = "${padZero(hour)}:${padZero(minute)}"
-        val result = findViewById<TextView>(R.id.resultLabel).apply {
+
+        findViewById<TextView>(R.id.resultLabel).apply {
             text = getString(R.string.created_text, alarmName, time, selectedSpan)
         }
     }
 
     fun padZero(value: Int): String {
-        return if (value > 9) value.toString() else "0${value}"
+        return if (value > 9) value.toString() else "0$value"
     }
 
     override fun onItemSelected(parent: AdapterView<*>, v: View, position: Int, id: Long) {
